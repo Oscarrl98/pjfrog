@@ -1,7 +1,7 @@
 pipeline{
 	agent any 
 	stages{
-		stage('Uploading library'){
+		stage('Desplegando artefacto'){
 				environment {
 					MAVEN_HOME = '/usr/share/maven'
 				}
