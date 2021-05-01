@@ -6,7 +6,7 @@ pipeline{
 					MAVEN_HOME = '/usr/share/maven'
 				}
 			steps{
-					echo 'STARTING DEPLOYING'
+					echo 'Iniciando despliegue'
 				
 				rtMavenDeployer (
 					id: 'ISP2_P',
@@ -17,9 +17,9 @@ pipeline{
 				rtMavenRun (
 					pom: 'pom.xml',
 					goals: 'install',
-					deployerId: 'isp2'
+					deployerId: 'isp2',
 				)
-					echo 'FINING DEPLOYING'
+					echo 'Finalizando Despliegue'
 				
 			
 			}
