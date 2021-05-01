@@ -11,13 +11,13 @@ pipeline{
 				rtMavenDeployer (
 					id: 'ISP2_P',
 					serverId: 'artifactory',
-					releaseRepo: 'ISP2',
-					snapshotRepo: 'ISP2',
+					releaseRepo: 'isp2',
+					snapshotRepo: 'isp2',
 				)
 				rtMavenRun (
 					pom: 'pom.xml',
 					goals: 'install',
-					deployerId: 'ISP2'
+					deployerId: 'isp2'
 				)
 					echo 'FINING DEPLOYING'
 				
