@@ -2,10 +2,11 @@ pipeline{
 	agent any
 	stages{
 		stage('INICIANDO'){
-				enviroment{
+				
+			steps{
+					enviroment{
 					MAVEN_HOME='/usr/share/maven'
 				}
-			steps{
 				echo 'iniciando publicacion'
 
 				rtMavenDeployer(
