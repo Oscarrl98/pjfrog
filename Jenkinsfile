@@ -24,12 +24,6 @@ pipeline{
 			
 			}
 		}
-		stage ('documenting builder artefactory info') {
-            steps {
-                rtPublishBuildInfo (
-                    serverId: "artifactory"
-                )
-            }
-        }
+		
 	}
 }
