@@ -1,27 +1,35 @@
 pipeline{
-	agent any
+	agent any 
 	stages{
-		stage('INICIANDO'){
-				
-			steps{
-					enviroment{
-					MAVEN_HOME='/usr/share/maven'
+		stage('Uploading library'){
+				environment {
+					MAVEN_HOME = '/usr/share/maven'
 				}
-				echo 'iniciando publicacion'
-
-				rtMavenDeployer(
+			steps{
+					echo 'STARTING DEPLOYING'
+				
+				rtMavenDeployer (
 					id: 'ISP2_P',
 					serverId: 'artifactory',
 					releaseRepo: 'ISP2',
 					snapshotRepo: 'ISP2',
 				)
-				rtMavenRun(
+				rtMavenRun (
 					pom: 'pom.xml',
 					goals: 'install',
-					deployerId: 'ISP2_P'
+					deployerId: 'ISP2'
 				)
-					echo 'Publicacion ExitosA'
+					echo 'FINING DEPLOYING'
+				
+			
 			}
-      }
-}
+		}
+		stage ('documenting builder artefactory info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "artifactory"
+                )
+            }
+        }
+	}
 }
