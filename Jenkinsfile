@@ -8,17 +8,17 @@ pipeline{
 			steps
 				echo 'iniciando publicacion'
 
-				rtMavenDeployer{
+				rtMavenDeployer(
 					id: 'ISP2_P',
 					serverId: 'artifactory',
 					releaseRepo: 'ISP2',
 					snapshotRepo: 'ISP2',
-				}
-				rtMavenRun{
+				)
+				rtMavenRun(
 					pom: 'pom.xml',
 					goals: 'install',
 					deployerId: 'ISP2_P'
-				}
+				)
 					echo 'Publicacion ExitosA'
 			}
       }
