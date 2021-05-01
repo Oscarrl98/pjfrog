@@ -5,7 +5,7 @@ pipeline{
 				enviroment{
 					MAVEN_HOME='/usr/share/maven'
 				}
-			steps
+			steps{
 				echo 'iniciando publicacion'
 
 				rtMavenDeployer(
@@ -22,4 +22,5 @@ pipeline{
 					echo 'Publicacion ExitosA'
 			}
       }
+}
 }
