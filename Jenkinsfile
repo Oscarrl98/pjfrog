@@ -9,7 +9,7 @@ pipeline{
 					echo 'Iniciando despliegue'
 				
 				rtMavenDeployer (
-					id: 'ISP2_P',
+					id: 'ISP2nP',
 					serverId: 'artifactory',
 					releaseRepo: 'isp2',
 					snapshotRepo: 'isp2',
@@ -17,7 +17,7 @@ pipeline{
 				rtMavenRun (
 					pom: 'pom.xml',
 					goals: 'install',
-					deployerId: 'ISP2_P',
+					deployerId: 'ISP2nP',
 				)
 					echo 'Finalizando Despliegue'
 				
