@@ -17,7 +17,7 @@ pipeline{
 				rtMavenRun (
 					pom: 'pom.xml',
 					goals: 'install',
-					deployerId: 'isp2',
+					deployerId: 'ISP2_P',
 				)
 					echo 'Finalizando Despliegue'
 				
